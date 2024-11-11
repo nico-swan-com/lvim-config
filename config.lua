@@ -18,6 +18,7 @@ require("treesitter.lvim")
 -- Plugins
 require("user.plugins")
 require("user.codi")
+require("user.todo-comments")
 
 -- Debuggers
 require("user.dap")
