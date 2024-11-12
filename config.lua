@@ -7,22 +7,7 @@ require("user.keymappings")
 -- =================================================
 lvim.builtin.noice = { active = true }
 lvim.builtin.fancy_wild_menu = { active = true }
-
--- Plugins
--- =================================================
-require("user.plugins")
-require("user.codi")          -- Scratchpad for coding
-require("user.todo-comments") -- Add style to TODO comments
--- Coding adds
-require("user.copilot")       -- Github AI coding ass eistant
-
--- Appearance
--- =================================================
-require("user.appearance")
-
--- IDE
--- =================================================
-require("user.noise").config()
+lvim.builtin.fancy_statusline = { active = true }
 
 -- LSP
 -- =================================================
@@ -32,9 +17,19 @@ require("lsp.lsp")
 -- =================================================
 require("treesitter.lvim")
 
-
+-- Plugins
+-- =================================================
+require("user.plugins")
 
 -- Debuggers
 -- =================================================
 require("user.dap")
 require("debuggers.node")
+
+-- Appearance
+-- =================================================
+require("user.appearance")
+-- StatusLine
+if lvim.builtin.fancy_statusline.active then
+  require("user.lualine").config()
+end

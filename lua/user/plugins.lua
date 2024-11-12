@@ -54,4 +54,24 @@ lvim.plugins = {
     end,
   },
 
+  -- DAP
+  -- =================================================
+  {
+    "mxsdev/nvim-dap-vscode-js",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+  },
+  -- Plugin to install adapters
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+  }
+
 }
+require("user.colorizer")
+require("user.codi")          -- Scratchpad for coding
+require("user.todo-comments") -- Add style to TODO comments
+-- Coding adds
+require("user.copilot")       -- Github AI coding ass eistant
+-- IDE
+require("user.noise").config()
