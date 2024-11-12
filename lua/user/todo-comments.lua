@@ -1,14 +1,5 @@
 local M = {}
 
-table.insert(lvim.plugins, {
-  -- highlight your todo comments in different styles
-  "folke/todo-comments.nvim",
-  dependencies = "nvim-lua/plenary.nvim",
-  config = function()
-    M.config()
-  end,
-  event = "BufRead",
-})
 
 
 
@@ -18,7 +9,7 @@ M.config = function()
     return
   end
 
-  local icons = require("user.lsp_kind").todo_comments
+  local icons = require("lsp.lsp-kind").todo_comments
   todo.setup {
     keywords = {
       FIX = { icon = icons.FIX },

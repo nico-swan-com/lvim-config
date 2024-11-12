@@ -5,7 +5,7 @@ formatters.setup {
     name = "prettier",
     filetypes = { "typescript", "typescriptangular" },
   },
+  --  {
+  --    "nix-community/nixpkgs-fmt"
+  --  }
 }
-
-
-
