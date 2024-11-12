@@ -1,40 +1,4 @@
 lvim.plugins = {
-  -- Appearance
-  -- =================================================
-  { "dracula/vim" }, -- dracula colorscheme
-  --  {
-  --    "folke/tokyonight.nvim",
-  --    config = function()
-  --      require("user.theme").tokyonight()
-  --      local _time = os.date "*t"
-  --      if (_time.hour >= 9 and _time.hour < 17) and lvim.builtin.time_based_themes then
-  --        lvim.colorscheme = "tokyonight-moon"
-  --      end
-  --    end,
-  -- },
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  --   config = function()
-  --     require("user.theme").rose_pine()
-  --     lvim.colorscheme = "rose-pine"
-  --   end,
-  --   cond = function()
-  --     local _time = os.date "*t"
-  --     return (_time.hour >= 1 and _time.hour < 9) and lvim.builtin.time_based_themes
-  --   end,
-  -- },
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   config = function()
-  --     require("user.theme").catppuccin()
-  --     local _time = os.date "*t"
-  --     if (_time.hour >= 17 and _time.hour < 21) and lvim.builtin.time_based_themes then
-  --       lvim.colorscheme = "catppuccin-mocha"
-  --     end
-  --   end,
-  -- },
   -- IDE
   -- ===============================================
   {
@@ -51,6 +15,10 @@ lvim.plugins = {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    enabled = lvim.builtin.fancy_wild_menu.active,
   },
   -- Extensible UI for Neovim notifications and LSP progress messages.
   {
