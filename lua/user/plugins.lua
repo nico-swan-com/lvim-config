@@ -74,4 +74,4 @@ require("user.todo-comments") -- Add style to TODO comments
 -- Coding adds
 require("user.copilot")       -- Github AI coding ass eistant
 -- IDE
-require("user.noise").config()
+require("user.noice").config()

@@ -1,5 +1,6 @@
 local M = {}
 
+
 M.config = function()
   local status_ok, noice = pcall(require, "noice")
   if not status_ok then
@@ -167,6 +168,29 @@ M.config = function()
       },
     },
   }
+
+  require("notify").setup({
+    background_colour = "#FFFFFF",
+  })
+
+  -- vim.cmd([[highlight NotifyBackground guifg=#FF0000]])
+  vim.cmd([[highlight NotifyERRORBorder guifg=#FF0000]])
+  vim.cmd([[highlight NotifyWARNBorder guifg=#FFA500]])
+  vim.cmd([[highlight NotifyINFOBorder guifg=#00FF00]])
+  vim.cmd([[highlight NotifyDEBUGBorder guifg=#0000FF]])
+  vim.cmd([[highlight NotifyTRACEBorder guifg=#9400D3]])
+
+  vim.cmd([[highlight NotifyERRORTitle guifg=#FF0000]])
+  vim.cmd([[highlight NotifyWARNTitle guifg=#FFA500]])
+  vim.cmd([[highlight NotifyINFOTitle guifg=#00FF00]])
+  vim.cmd([[highlight NotifyDEBUGTitle guifg=#0000FF]])
+  vim.cmd([[highlight NotifyTRACETitle guifg=#9400D3]])
+
+  vim.cmd([[highlight NotifyERRORBody guifg=#FF0000]])
+  vim.cmd([[highlight NotifyWARNBody guifg=#FFA500]])
+  vim.cmd([[highlight NotifyINFOBody guifg=#00FF00]])
+  vim.cmd([[highlight NotifyDEBUGBody guifg=#0000FF]])
+  vim.cmd([[highlight NotifyTRACEBody guifg=#9400D3]])
 end
 
 return M
