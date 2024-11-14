@@ -102,11 +102,15 @@ lvim.plugins = {
     event = "BufRead",
   },
   {
+    "neoclide/coc.nvim",
+    branch = "master",
+    build = "npm ci"
+  },
+  {
     --  Better folding
     "kevinhwang91/nvim-ufo",
     dependencies = {
       "kevinhwang91/promise-async",
-      "neoclide/coc.nvim"
     }
   },
   -- Markdown
@@ -136,7 +140,11 @@ lvim.plugins = {
   -- Plugin to install adapters
   {
     "jay-babu/mason-nvim-dap.nvim",
-  }
+  },
+
+  -- AI
+  -- =================================================
+  { "codota/tabnine-nvim", build = "./dl_binaries.sh" },
 
 }
 -- Coding adds
