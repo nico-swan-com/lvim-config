@@ -12,6 +12,5 @@ table.insert(lvim.plugins, {
 })
 
 
-table.insert(lvim.plugins, {
-
-})
+-- table.insert(lvim.plugins, {
+-- })

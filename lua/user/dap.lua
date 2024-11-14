@@ -32,5 +32,7 @@ M.config = function()
   -- ['haskell'] = 'haskell-debug-adapter',
   -- ['erlang'] = 'erlang-debugger',a
   --
+
+  require("debuggers.node")
 end
 return M

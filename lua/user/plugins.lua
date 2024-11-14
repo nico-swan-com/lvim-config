@@ -1,18 +1,72 @@
 lvim.plugins = {
   -- IDE
   -- ===============================================
+  -- Enhance the comments
   {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
+    enabled = vim.fn.has("nvim-0.10.0") == 1,
+  },
+  {
+    -- Popup window to get color
+    "max397574/colortils.nvim",
+    cmd = "Colortils",
+    config = function()
+      require("user.colortils").config()
+    end,
+  },
+  {
+    -- Commonly used keymappings
+    'tummetott/unimpaired.nvim',
+    event = 'VeryLazy',
+    opts = {
+      -- add options here if you wish to override the default settings
+    },
+  },
+  {
+    -- Preview markdown
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+    enabled = lvim.builtin.markdown.active
+  },
+  {
+    -- Sidebar symbol selection
+    'stevearc/aerial.nvim',
+    opts = function()
+      require("user.aerial").config()
+    end,
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  },
+
+  {
+    -- Improves input windows and other UX
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+  {
+    -- Creates notification message
+    "rcarriga/nvim-notify",
+    config = function()
+      require("user.notify").config()
+    end,
+  },
+  {
+    --- imporves notification messages
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
+      "echasnovski/mini.nvim",
       "rcarriga/nvim-notify",
     }
   },
@@ -20,11 +74,21 @@ lvim.plugins = {
     "hrsh7th/cmp-cmdline",
     enabled = lvim.builtin.fancy_wild_menu.active,
   },
-  -- Extensible UI for Neovim notifications and LSP progress messages.
   {
+    -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("user.colorizer").config()
+    end,
+    event = "BufReadPre",
+  },
+  {
+
+    -- Extensible UI for Neovim notifications and LSP progress messages.
     "j-hui/fidget.nvim",
     config = function()
-      require("user.fidget-spinner").config()
+      -- require("user.fidget-spinner").config()
+      require("user.fidget").config()
     end,
     -- disable = lvim.builtin.noice.active,
   },
@@ -37,12 +101,19 @@ lvim.plugins = {
     end,
     event = "BufRead",
   },
-
-  -- Markdown
   {
-    "npxbr/glow.nvim",
-    ft = { "markdown" }
+    --  Better folding
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      "neoclide/coc.nvim"
+    }
   },
+  -- Markdown
+  -- {
+  --   "npxbr/glow.nvim",
+  --   ft = { "markdown" }
+  -- },
 
   -- Coding adds
   -- =================================================
@@ -68,10 +139,5 @@ lvim.plugins = {
   }
 
 }
-require("user.colorizer")
-require("user.codi")          -- Scratchpad for coding
-require("user.todo-comments") -- Add style to TODO comments
 -- Coding adds
-require("user.copilot")       -- Github AI coding ass eistant
--- IDE
-require("user.noice").config()
+-- require("user.copilot")                -- Github AI coding ass eistant
