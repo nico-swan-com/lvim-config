@@ -10,7 +10,7 @@ lvim.builtin.noice = { active = true }            -- enables noice.nvim and inc-
 lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
 lvim.builtin.fancy_wild_menu = { active = true }  -- enable/disable cmp-cmdline
 lvim.builtin.markdown = { active = true }         -- enable/disable markdown.nvim
---lvim.builtin.dap = { active = true }              -- change this to enable/disable debugging
+-- lvim.builtin.dap = { active = true }              -- change this to enable/disable debugging
 -- lvim.builtin.test_runner = { active = true, runner = "neotest" }             -- change this to enable/disable ultest or neotest
 -- lvim.builtin.web_programming = { active = true, extra = "typescript.nvim" } -- (typescript.nvim or typescript-tools.nvim) + package-info.nvim
 
@@ -43,8 +43,7 @@ lvim.builtin.markdown = { active = true }         -- enable/disable markdown.nvi
 
 
 -- --    AI Tools
--- lvim.builtin.github_copilot = { active = true }   -- enable/disable github copilot
--- lvim.builtin.fancy_statusline = { active = true }lvim.builtin.fancy_statusline = { active = true }
+lvim.builtin.github_copilot = { active = true } -- enable/disable github copilot
 
 -- LSP
 -- =================================================
@@ -59,6 +58,7 @@ require("treesitter.lvim")
 require("user.plugins")
 require("user.fidget")
 require("user.ufo").config()
+require("user.copilot") -- Github AI coding ass eistant
 
 -- Debuggers
 -- =================================================

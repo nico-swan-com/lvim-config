@@ -140,4 +140,3 @@ lvim.plugins = {
 
 }
 -- Coding adds
--- require("user.copilot")                -- Github AI coding ass eistant
