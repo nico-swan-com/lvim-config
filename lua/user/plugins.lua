@@ -101,11 +101,11 @@ lvim.plugins = {
     end,
     event = "BufRead",
   },
-  {
-    "neoclide/coc.nvim",
-    branch = "master",
-    build = "npm ci"
-  },
+  -- {
+  --   "neoclide/coc.nvim",
+  --   branch = "master",
+  --   build = "npm ci"
+  -- },
   {
     --  Better folding
     "kevinhwang91/nvim-ufo",
