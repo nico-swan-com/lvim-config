@@ -229,7 +229,7 @@ M.config = function()
         },
       },
       lualine_v = {},
-      lualine_x = {},
+      lualine_x = { 'tabnine' },
       lualine_y = {},
       lualine_z = {},
     },

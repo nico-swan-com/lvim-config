@@ -64,6 +64,9 @@ lvim.plugins = {
     --- imporves notification messages
     "folke/noice.nvim",
     event = "VeryLazy",
+    config = function()
+      require("user.noice").config()
+    end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "echasnovski/mini.nvim",
@@ -83,7 +86,6 @@ lvim.plugins = {
     event = "BufReadPre",
   },
   {
-
     -- Extensible UI for Neovim notifications and LSP progress messages.
     "j-hui/fidget.nvim",
     config = function()

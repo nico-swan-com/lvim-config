@@ -1,5 +1,5 @@
 lvim.transparent_window = true
-lvim.builtin.time_based_themes = true -- set false to use your own configured theme
+lvim.builtin.time_based_themes = false -- set false to use your own configured theme
 
 
 -- StatusLine

@@ -6,10 +6,13 @@ require("user.keymappings")
 -- Customizations
 -- =================================================
 lvim.builtin.notify = { active = true }
-lvim.builtin.noice = { active = true }            -- enables noice.nvim and inc-rename.nvim
-lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
-lvim.builtin.fancy_wild_menu = { active = true }  -- enable/disable cmp-cmdline
-lvim.builtin.markdown = { active = true }         -- enable/disable markdown.nvim
+lvim.builtin.noice = { active = true }             -- enables noice.nvim and inc-rename.nvim
+lvim.builtin.fancy_statusline = { active = false } -- enable/disable fancy statusline
+lvim.builtin.fancy_wild_menu = { active = true }   -- enable/disable cmp-cmdline
+lvim.builtin.markdown = { active = true }          -- enable/disable markdown.nvim
+lvim.builtin.ufo = { active = true }               -- enable/disable ufo.nvim
+
+
 -- lvim.builtin.dap = { active = true }              -- change this to enable/disable debugging
 -- lvim.builtin.test_runner = { active = true, runner = "neotest" }             -- change this to enable/disable ultest or neotest
 -- lvim.builtin.web_programming = { active = true, extra = "typescript.nvim" } -- (typescript.nvim or typescript-tools.nvim) + package-info.nvim
@@ -44,6 +47,7 @@ lvim.builtin.markdown = { active = true }         -- enable/disable markdown.nvi
 
 -- --    AI Tools
 lvim.builtin.github_copilot = { active = true } -- enable/disable github copilot
+lvim.builtin.tabnine = { active = false }       -- enable/disable tabnine copilot
 
 -- LSP
 -- =================================================
@@ -58,7 +62,8 @@ require("treesitter.lvim")
 require("user.plugins")
 require("user.fidget")
 require("user.ufo").config()
-require("user.copilot") -- Github AI coding ass eistant
+require("user.copilot")          -- Github AI coding asseistant
+require("user.tabnine").config() -- Github AI coding asseistant
 
 -- Debuggers
 -- =================================================

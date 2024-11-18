@@ -3,7 +3,7 @@ local M = {}
 
 M.config = function()
   local status_ok, notify = pcall(require, "notify")
-  if not status_ok then
+  if not status_ok and not lvim.builtin.notify.active then
     return
   end
 

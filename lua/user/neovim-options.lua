@@ -1,29 +1,29 @@
 local M = {}
 
 M.config = function()
-  local disabled_plugins = {
-    "2html_plugin",
-    "getscript",
-    "getscriptPlugin",
-    "gzip",
-    "logipat",
-    -- "netrw",
-    -- "netrwPlugin",
-    -- "netrwSettings",
-    -- "netrwFileHandlers",
-    "matchit",
-    "tar",
-    "tarPlugin",
-    "rrhelper",
-    "spellfile_plugin",
-    "vimball",
-    "vimballPlugin",
-    "zip",
-    "zipPlugin",
-  }
-  for _, plugin in pairs(disabled_plugins) do
-    vim.g["loaded_" .. plugin] = 1
-  end
+  -- local disabled_plugins = {
+  --   "2html_plugin",
+  --   "getscript",
+  --   "getscriptPlugin",
+  --   "gzip",
+  --   "logipat",
+  --   -- "netrw",
+  --   -- "netrwPlugin",
+  --   -- "netrwSettings",
+  --   -- "netrwFileHandlers",
+  --   "matchit",
+  --   "tar",
+  --   "tarPlugin",
+  --   "rrhelper",
+  --   "spellfile_plugin",
+  --   "vimball",
+  --   "vimballPlugin",
+  --   "zip",
+  --   "zipPlugin",
+  -- }
+  -- for _, plugin in pairs(disabled_plugins) do
+  --   vim.g["loaded_" .. plugin] = 1
+  -- end
 
 
   vim.lsp.set_log_level "error"
@@ -74,7 +74,8 @@ M.config = function()
     vertright = "┣",
     verthoriz = "╋",
   }
-  vim.opt.guifont = "FiraCode Nerd Font:h13"
+  -- vim.opt.guifont = "FiraCode Nerd Font:h13"
+  vim.opt.guifont = "FiraCode Nerd Font"
   vim.opt.cmdheight = 1
   vim.opt.wildignore = {
     "*.aux,*.out,*.toc",
@@ -94,99 +95,99 @@ M.config = function()
     --rust
     "Cargo.lock,Cargo.Bazel.lock",
   }
-  vim.opt.shortmess = {
-    t = true, -- truncate file messages at start
-    A = true, -- ignore annoying swap file messages
-    o = true, -- file-read message overwrites previous
-    O = true, -- file-read message overwrites previous
-    T = true, -- truncate non-file messages in middle
-    f = true, -- (file x of x) instead of just (x of x
-    F = true, -- Don't give file info when editing a file, NOTE: this breaks autocommand messages
-    s = true,
-    c = true,
-    W = true, -- Don't show [w] or written when writing
-  }
-  vim.opt.formatoptions = {
-    ["1"] = true,
-    ["2"] = true, -- Use indent from 2nd line of a paragraph
-    q = true,     -- continue comments with gq"
-    c = true,     -- Auto-wrap comments using textwidth
-    r = true,     -- Continue comments when pressing Enter
-    n = true,     -- Recognize numbered lists
-    t = false,    -- autowrap lines using text width value
-    j = true,     -- remove a comment leader when joining lines.
-    -- Only break if the line was not longer than 'textwidth' when the insert
-    -- started and only at a white character that has been entered during the
-    -- current insert command.
-    l = true,
-    v = true,
-  }
-  vim.opt.listchars = {
-    eol = nil,
-    tab = "│ ",
-    extends = "›", -- Alternatives: … »
-    precedes = "‹", -- Alternatives: … «
-    trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
-  }
+  -- vim.opt.shortmess = {
+  --   t = true, -- truncate file messages at start
+  --   A = true, -- ignore annoying swap file messages
+  --   o = true, -- file-read message overwrites previous
+  --   O = true, -- file-read message overwrites previous
+  --   T = true, -- truncate non-file messages in middle
+  --   f = true, -- (file x of x) instead of just (x of x
+  --   F = true, -- Don't give file info when editing a file, NOTE: this breaks autocommand messages
+  --   s = true,
+  --   c = true,
+  --   W = true, -- Don't show [w] or written when writing
+  -- }
+  -- vim.opt.formatoptions = {
+  --   ["1"] = true,
+  --   ["2"] = true, -- Use indent from 2nd line of a paragraph
+  --   q = true,     -- continue comments with gq"
+  --   c = true,     -- Auto-wrap comments using textwidth
+  --   r = true,     -- Continue comments when pressing Enter
+  --   n = true,     -- Recognize numbered lists
+  --   t = false,    -- autowrap lines using text width value
+  --   j = true,     -- remove a comment leader when joining lines.
+  --   -- Only break if the line was not longer than 'textwidth' when the insert
+  --   -- started and only at a white character that has been entered during the
+  --   -- current insert command.
+  --   l = true,
+  --   v = true,
+  -- }
+  -- vim.opt.listchars = {
+  --   eol = nil,
+  --   tab = "│ ",
+  --   extends = "›", -- Alternatives: … »
+  --   precedes = "‹", -- Alternatives: … «
+  --   trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
+  -- }
 
-  vim.g.ultest_summary_width = 30
-  vim.g.ultest_deprecation_notice = 0
-  vim.g.toggle_theme_icon = "   "
-  vim.g.root_lsp_ignore = { "copilot" }
-  vim.g.dashboard_enable_session = 0
-  vim.g.dashboard_disable_statusline = 1
-  vim.o.secure = true -- Disable autocmd etc for project local vimrc files.
-  vim.o.exrc = false  -- Allow project local vimrc files example .nvimrc see :h exrc
-  vim.o.sessionoptions = "buffers,curdir,folds,globals,help,tabpages,winpos,winsize"
-  vim.o.foldtext = "v:lua.HighlightedFoldtext()"
-  vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
-  vim.wo.foldmethod = "expr"
-  vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-  vim.wo.foldlevel = 4
-  vim.wo.foldnestmax = 3
-  vim.wo.foldminlines = 1
+  -- vim.g.ultest_summary_width = 30
+  -- vim.g.ultest_deprecation_notice = 0
+  -- vim.g.toggle_theme_icon = "   "
+  -- vim.g.root_lsp_ignore = { "copilot" }
+  -- vim.g.dashboard_enable_session = 0
+  -- vim.g.dashboard_disable_statusline = 1
+  -- vim.o.secure = true -- Disable autocmd etc for project local vimrc files.
+  -- vim.o.exrc = false  -- Allow project local vimrc files example .nvimrc see :h exrc
+  -- vim.o.sessionoptions = "buffers,curdir,folds,globals,help,tabpages,winpos,winsize"
+  -- -- vim.o.foldtext = "v:lua.HighlightedFoldtext()"
+  -- vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
+  -- vim.wo.foldmethod = "expr"
+  -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+  -- vim.wo.foldlevel = 4
+  -- vim.wo.foldnestmax = 3
+  -- vim.wo.foldminlines = 1
 
-  -- Cursorline highlighting control
-  --  Only have it on in the active buffer
-  local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
-  vim.api.nvim_create_autocmd("WinLeave", {
-    group = group,
-    callback = function()
-      vim.opt_local.cursorline = false
-    end,
-  })
-  vim.api.nvim_create_autocmd("WinEnter", {
-    group = group,
-    callback = function()
-      if vim.bo.filetype ~= "alpha" then
-        vim.opt_local.cursorline = true
-      end
-    end,
-  })
+  -- -- Cursorline highlighting control
+  -- --  Only have it on in the active buffer
+  -- local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
+  -- vim.api.nvim_create_autocmd("WinLeave", {
+  --   group = group,
+  --   callback = function()
+  --     vim.opt_local.cursorline = false
+  --   end,
+  -- })
+  -- vim.api.nvim_create_autocmd("WinEnter", {
+  --   group = group,
+  --   callback = function()
+  --     if vim.bo.filetype ~= "alpha" then
+  --       vim.opt_local.cursorline = true
+  --     end
+  --   end,
+  -- })
 
-  vim.filetype.add {
-    extension = {
-      fnl = "fennel",
-      wiki = "markdown",
-    },
-    filename = {
-      ["go.sum"] = "gosum",
-      ["go.mod"] = "gomod",
-    },
-    pattern = {
-      ["*.tml"] = "gohtmltmpl",
-      ["%.env.*"] = "sh",
-    },
-  }
-  vim.g.editorconfig = true
+  -- vim.filetype.add {
+  --   extension = {
+  --     fnl = "fennel",
+  --     wiki = "markdown",
+  --   },
+  --   filename = {
+  --     ["go.sum"] = "gosum",
+  --     ["go.mod"] = "gomod",
+  --   },
+  --   pattern = {
+  --     ["*.tml"] = "gohtmltmpl",
+  --     ["%.env.*"] = "sh",
+  --   },
+  -- }
+  -- vim.g.editorconfig = true
 
-  if vim.g.neovide then
-    vim.g.neovide_cursor_animation_length = 0.01
-    vim.g.neovide_cursor_trail_length = 0.05
-    vim.g.neovide_cursor_antialiasing = true
-    vim.g.neovide_remember_window_size = true
-    vim.cmd [[set guifont=FiraCode\ Nerd\ Font,mini-file-icons]]
-  end
+  -- if vim.g.neovide then
+  --   vim.g.neovide_cursor_animation_length = 0.01
+  --   vim.g.neovide_cursor_trail_length = 0.05
+  --   vim.g.neovide_cursor_antialiasing = true
+  --   vim.g.neovide_remember_window_size = true
+  --   vim.cmd [[set guifont=FiraCode\ Nerd\ Font,mini-file-icons]]
+  -- end
 end
 
 -- credit: https://github.com/nyngwang/NeoZoom.lua
