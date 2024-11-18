@@ -62,7 +62,6 @@ require("treesitter.lvim")
 require("user.plugins")
 require("user.fidget")
 require("user.ufo").config()
-require("user.copilot")          -- Github AI coding asseistant
 require("user.tabnine").config() -- Github AI coding asseistant
 
 -- Debuggers
